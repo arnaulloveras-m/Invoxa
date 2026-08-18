@@ -1,3 +1,3 @@
-Teclado;Teclado mecánico;59.99;21
-Ratón;Ratón inalámbrico;29.99;21
-Alfombrilla;;15.50;21
+Keyboard;Mechanical Keyboard;59.99;21
+Mouse;Inalambric Mouse;29.99;21
+Mat;;15.50;21
