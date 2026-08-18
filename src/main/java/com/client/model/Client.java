@@ -24,6 +24,19 @@ public class Client {
         this.createdAt = LocalDate.now();
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", nif='" + nif + '\'' +
+            ", email='" + email + '\'' +
+            ", phone='" + phone + '\'' +
+            ", address='" + address + '\'' +
+            ", created At='" + createdAt + '\'' +
+            '}';
+    }
+
     public void setName(String name) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be null");

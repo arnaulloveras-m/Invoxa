@@ -3,12 +3,15 @@ package src.main.java.com.client.init;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.main.java.com.client.ui.ClientMenu;
+
 public class Main {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int option = -1;
+        ClientMenu clientMenu = new ClientMenu();
 
         while (option != 0) {
 
@@ -30,7 +33,7 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    
+                    clientMenu.clientMenu();
                     break;
                 
                 case 2:
