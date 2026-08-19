@@ -27,4 +27,15 @@ public class ClientService {
 
         return null;
     }
+
+    public boolean deleteClient(int id) {
+        Client client = findClientById(id);
+
+        if (client != null) {
+            clientsList.remove(client);
+            return true;
+        } 
+        
+        return false;
+    }
 }

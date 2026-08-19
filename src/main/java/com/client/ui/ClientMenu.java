@@ -45,6 +45,14 @@ public class ClientMenu {
             case 3:
                 findClientById();
                 break;
+
+            case 4:
+                editClient();
+                break;
+
+            case 5:
+                deleteClient();
+                break;     
                     
             default:
                 System.out.println("Invalid number");
@@ -53,7 +61,7 @@ public class ClientMenu {
         
     }
 
-    public void createClient() {
+    private void createClient() {
         sc.nextLine(); //Consuming the last nextInt()
         System.out.println("What is client's name: ");
         String name = sc.nextLine();
@@ -93,7 +101,7 @@ public class ClientMenu {
         clientService.createClient(name, nif, mail, phone, address);
     }
 
-    public void getAllClients() {
+    private void getAllClients() {
         ArrayList<Client> clients = clientService.getAllClients();
     
         for (Client client: clients) {
@@ -101,19 +109,103 @@ public class ClientMenu {
         }
     }
 
-    public void findClientById() {
+    private void findClientById() {
         int id;
         do {
-            System.out.println("Que id quieres buscar: ");
+            System.out.println("What id you want to search: ");
             id = sc.nextInt();
         } while (id < 1);
 
         Client client = clientService.findClientById(id);
 
         if (client == null) {
-            System.out.println("NO hay cliente con ese id");
+            System.out.println("There's no client with that id");
         } else {
             System.out.println(client);
+        }
+    }
+
+    private void editClient() {
+        getAllClients();
+        
+        int id;
+        do {
+            System.out.println("What id you want to edit: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        Client client = clientService.findClientById(id);
+        if (client == null) {
+            System.out.println("There's no client with that id");
+            return;
+        }
+
+        int parameter;
+        System.out.println("[1].Name");
+        System.out.println("[2].NIF");
+        System.out.println("[3].Email");
+        System.out.println("[4].Phone");
+        System.out.println("[5].Address");
+        do {
+            System.out.println("What parameter you want to change: ");
+            parameter = sc.nextInt();
+            sc.nextLine(); //Consuming last scanner
+        } while (parameter < 1 || parameter > 5);
+
+        switch (parameter) {
+            case 1:
+                System.out.println("Actual name: " + client.getName());
+                System.out.println("New name: " );
+                String newName = sc.nextLine();
+                client.setName(newName);
+                break;
+
+            case 2:
+                System.out.println("Actual NIF: " + client.getNif());
+                System.out.println("New NIF: " );
+                String newNIF = sc.nextLine();
+                client.setNif(newNIF);
+                break;
+
+            case 3:
+                System.out.println("Actual email: " + client.getEmail());
+                System.out.println("New email: " );
+                String newEmail = sc.nextLine();
+                client.setEmail(newEmail);
+                break;
+
+            case 4:
+                System.out.println("Actual phone: " + client.getPhone());
+                System.out.println("New phone: " );
+                String newPhone = sc.nextLine();
+                client.setPhone(newPhone);
+                break; 
+
+            case 5:
+                System.out.println("Actual address: " + client.getAddress());
+                System.out.println("New address: " );
+                String newAddress = sc.nextLine();
+                client.setAddress(newAddress);
+                break;         
+        
+            default:
+                break;
+        }
+    }
+
+    private void deleteClient() {
+        getAllClients();
+        
+        int id;
+        do {
+            System.out.println("What id you want to delete: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        if (clientService.deleteClient(id)) {
+            System.out.println("Client deleted successfully.");
+        } else {
+            System.out.println("That client doesn't exist.");
         }
     }
 }
