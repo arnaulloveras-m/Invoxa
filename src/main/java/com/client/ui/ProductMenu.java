@@ -1,9 +1,12 @@
 package src.main.java.com.client.ui;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.main.java.com.client.model.Client;
+import src.main.java.com.client.model.Product;
 import src.main.java.com.client.services.ProductService;
 
 public class ProductMenu {
@@ -38,7 +41,7 @@ public class ProductMenu {
                 break;
 
             case 2:
-                
+                getAllProducts();
                 break;
 
             case 3:
@@ -69,6 +72,14 @@ public class ProductMenu {
         System.out.println("What tax does it have: ");
         BigDecimal tax = sc.nextBigDecimal();
         productService.createProduct(name, description, price, tax);
+    }
+
+    private void getAllProducts() {
+        ArrayList<Product> products = productService.getAllProducts();
+    
+        for (Product product: products) {
+            System.out.println(product);
+        }
     }
     
 }

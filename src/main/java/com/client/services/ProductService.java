@@ -3,6 +3,7 @@ package src.main.java.com.client.services;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import src.main.java.com.client.model.Client;
 import src.main.java.com.client.model.Product;
 import src.main.java.com.client.persistence.*;
 
@@ -23,6 +24,10 @@ public class ProductService {
         var product = new Product(name, description, price, tax);
         productsList.add(product);
         productWriter.writeFile(productsList);
+    }
+
+    public ArrayList<Product> getAllProducts() {
+        return new ArrayList<>(productsList);
     }
     
 }
