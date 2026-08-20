@@ -12,12 +12,27 @@ public class Product {
     private BigDecimal price;
     private BigDecimal tax;
 
+    public Product(int id, String name, String description, BigDecimal price, BigDecimal tax) {
+        this.id = id;
+        updateNextId(id);
+        this.setName(name);
+        this.setDescription(description);
+        this.setPrice(price);
+        this.setTax(tax);
+    }
+
     public Product(String name, String description, BigDecimal price, BigDecimal tax) {
         this.id = nextId++;
         this.setName(name);
         this.setDescription(description);
         this.setPrice(price);
         this.setTax(tax);
+    }
+
+    public static void updateNextId(int id) {
+        if (id >= nextId) {
+            nextId = id + 1;
+        }
     }
 
     @Override
