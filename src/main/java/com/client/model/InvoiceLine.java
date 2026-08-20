@@ -1,9 +1,6 @@
 package src.main.java.com.client.model;
 import java.math.BigDecimal;
 
-import src.main.java.com.client.model.Product;
-
-
 public class InvoiceLine {
 
     private Product product;

@@ -3,7 +3,7 @@ package src.main.java.com.client.init;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import src.main.java.com.client.ui.ClientMenu;
+import src.main.java.com.client.ui.*;
 
 public class Main {
 
@@ -12,6 +12,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int option = -1;
         ClientMenu clientMenu = new ClientMenu();
+        ProductMenu productMenu = new ProductMenu();
 
         while (option != 0) {
 
@@ -37,7 +38,7 @@ public class Main {
                     break;
                 
                 case 2:
-
+                    productMenu.productMenu();
                     break;
                     
                 case 3:

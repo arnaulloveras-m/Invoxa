@@ -4,33 +4,37 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import src.main.java.com.client.model.Product;
 import java.math.BigDecimal;
+import src.main.java.com.client.model.Product;
 
 public class ProductReader {
 
     private ArrayList<Product> products = new ArrayList<Product>();
 
-    public void readFile() {
+    public ArrayList<Product> readFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("data/products.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
                 String[] data = line.split(";");
-                String name = data[0];
-                String description = data[1];
-                BigDecimal price = new BigDecimal(data[2]);
-                BigDecimal tax = new BigDecimal(data[3]);
+                String id = data[0];
+                int idInt = Integer.parseInt(id);
+                String name = data[1];
+                String description = data[2];
+                BigDecimal price = new BigDecimal(data[3]);
+                BigDecimal tax = new BigDecimal(data[4]);
 
-                var product = new Product(name, description, price, tax);
+                Product.updateNextId(idInt);
+                var product = new Product(idInt, name, description, price, tax);
                 products.add(product);
             }
         } catch (IOException e) {
           System.out.println("Error reading file.");
         }
 
-        for (Product product : products) {
-            System.out.println(product);
-        }
+        return products;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return new ArrayList<>(products);
     }
 }
