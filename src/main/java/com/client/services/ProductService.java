@@ -29,5 +29,32 @@ public class ProductService {
     public ArrayList<Product> getAllProducts() {
         return new ArrayList<>(productsList);
     }
+
+    public Product findProductById(int id) {
+    
+        for (Product product: productsList) {
+            if(product.getId() == id) {
+                return product;
+            }
+        } 
+
+        return null;
+    }
+
+    public void saveProducts() {
+        productWriter.writeFile(productsList);
+    }
+
+    public boolean deleteProduct(int id) {
+        Product product = findProductById(id);
+
+        if (product != null) {
+            productsList.remove(product);
+            saveProducts();
+            return true;
+        } 
+        
+        return false;
+    }
     
 }

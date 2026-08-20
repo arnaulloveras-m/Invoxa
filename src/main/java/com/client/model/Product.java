@@ -37,7 +37,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Proudct{id='" + id + "', name='" + name + "', description='" + description + "', price='" + price + "', tax='" + tax +"}";
+        return "Product{id='" + id + "', name='" + name + "', description='" + description + "', price='" + price + "', tax='" + tax +"}";
     }
 
     public void setName(String name) {

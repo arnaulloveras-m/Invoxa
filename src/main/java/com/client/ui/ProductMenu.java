@@ -45,15 +45,15 @@ public class ProductMenu {
                 break;
 
             case 3:
-                
+                findProductById();
                 break;
 
             case 4:
-                
+                editProduct();
                 break;
 
             case 5:
-                
+                deleteProduct();
                 break;
         
             default:
@@ -79,6 +79,102 @@ public class ProductMenu {
     
         for (Product product: products) {
             System.out.println(product);
+        }
+    }
+
+    private void findProductById() {
+        int id;
+        do {
+            System.out.println("What id you want to search: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        Product product = productService.findProductById(id);
+
+        if (product == null) {
+            System.out.println("There's no product with that id");
+        } else {
+            System.out.println(product);
+        }
+    }
+
+    private void editProduct() {
+        getAllProducts();
+        
+        int id;
+        do {
+            System.out.println("What id you want to edit: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        Product product = productService.findProductById(id);
+        if (product == null) {
+            System.out.println("There's no product with that id");
+            return;
+        }
+
+        int parameter;
+        System.out.println("[1].Name");
+        System.out.println("[2].Description");
+        System.out.println("[3].Price");
+        System.out.println("[4].Tax");
+        do {
+            System.out.println("What parameter you want to change: ");
+            parameter = sc.nextInt();
+            sc.nextLine(); //Consuming last scanner
+        } while (parameter < 1 || parameter > 4);
+
+        switch (parameter) {
+            case 1:
+                System.out.println("Actual name: " + product.getName());
+                System.out.println("New name: " );
+                String newName = sc.nextLine();
+                product.setName(newName);
+                productService.saveProducts();
+                break;
+
+            case 2:
+                System.out.println("Actual Description: " + product.getDescription());
+                System.out.println("New Description: " );
+                String newDescription = sc.nextLine();
+                product.setDescription(newDescription);
+                productService.saveProducts();
+                break;
+
+            case 3:
+                System.out.println("Actual price: " + product.getPrice());
+                System.out.println("New price: " );
+                BigDecimal newPrice = sc.nextBigDecimal();
+                product.setPrice(newPrice);
+                productService.saveProducts();
+                break;
+
+            case 4:
+                System.out.println("Actual tax: " + product.getTax());
+                System.out.println("New tax: " );
+                BigDecimal newTax = sc.nextBigDecimal();
+                product.setTax(newTax);
+                productService.saveProducts();
+                break;      
+        
+            default:
+                break;
+        }
+    }
+
+    private void deleteProduct() {
+        getAllProducts();
+        
+        int id;
+        do {
+            System.out.println("What id you want to delete: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        if (productService.deleteProduct(id)) {
+            System.out.println("Product deleted successfully.");
+        } else {
+            System.out.println("That product doesn't exist.");
         }
     }
     
