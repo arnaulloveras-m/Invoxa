@@ -23,10 +23,6 @@ public class Invoice {
         if (date == null) {
             throw new IllegalArgumentException("Invoice date cannot be null");
         }
-        
-        if (date.getYear() != LocalDate.now().getYear()) {
-            throw new IllegalArgumentException("The years date cannot be last or next year");
-        }
 
         this.date = date;
     }

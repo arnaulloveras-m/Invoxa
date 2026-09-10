@@ -4,13 +4,16 @@ import java.math.BigDecimal;
 public class InvoiceLine {
 
     private Product product;
+    private String productName;
     private int quantity;
     private BigDecimal unitPrice;
+    private BigDecimal tax;
 
-    public InvoiceLine(Product product, int quantity, BigDecimal unitPrice) {
-        this.product = product;
+    public InvoiceLine(Product product, int quantity) {
+        this.productName = product.getName();
         this.quantity = quantity;
         this.unitPrice = product.getPrice();
+        this.tax = product.getTax();
     }
 
     @Override
