@@ -18,7 +18,9 @@ public class InvoiceLine {
 
     @Override
     public String toString() {
-        return product.getName() + " x" + quantity + " | " + product.getPrice() + " €/ud | Total: " + getTotal() + " €";
+        return productName + " x" + quantity
+                + " | " + unitPrice + " €/ud"
+                + " | Total: " + getTotal() + " €";
     }
 
     public BigDecimal getTotal() {

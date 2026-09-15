@@ -2,6 +2,7 @@ package src.main.java.com.client.ui;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,12 +15,23 @@ import src.main.java.com.client.services.InvoiceService;
 import src.main.java.com.client.services.ProductService;
 
 public class InvoiceMenu {
+
+    private ClientService clientService;
+    private ProductService productService;
+    private InvoiceService invoiceService;
+
+    public InvoiceMenu(
+            ClientService clientService,
+            ProductService productService,
+            InvoiceService invoiceService) {
+
+        this.clientService = clientService;
+        this.productService = productService;
+        this.invoiceService = invoiceService;
+}
     
     private Scanner sc = new Scanner(System.in);
     private int option = -1;
-    private ClientService clientService = new ClientService();
-    private ProductService productService = new ProductService();
-    private InvoiceService invoiceService = new InvoiceService();
         
     public void invoiceMenu() {
         System.out.println("====== INVOICE ======");
@@ -41,19 +53,20 @@ public class InvoiceMenu {
 
         switch (option) {
             case 1:
+                createInvoice();
                 break;
 
             case 2:
+                getAllInvoices();
                 break;
         
             case 3:
+                findInvoiceById();
                 break;
 
             case 4:
-                break;
-
-            case 5:
-                break;     
+                deleteInvoice();
+                break;  
                     
             default:
                 System.out.println("Invalid number");
@@ -63,10 +76,14 @@ public class InvoiceMenu {
     }
 
     private void createInvoice() {
-        boolean create = false;
+        boolean addAnother = false;
 
-        clientService.getAllClients();
+        ArrayList<Client> clients = clientService.getAllClients();
 
+        for (Client client : clients) {
+            System.out.println(client);
+        }
+        
         int id;
         do {
             System.out.println("Select client:");
@@ -79,6 +96,8 @@ public class InvoiceMenu {
             return;
         }
 
+        sc.nextLine(); //Consume the entrance of scanner
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         System.out.println("Date(dd/MM/yyyy): ");
@@ -88,7 +107,7 @@ public class InvoiceMenu {
 
         Invoice invoice = new Invoice(client, date);
 
-        while (!create) {
+        while (!addAnother) {
     
             productService.getAllProducts();
             id = 0;
@@ -96,6 +115,7 @@ public class InvoiceMenu {
             do {
                 System.out.println("Select product:");
                 id = sc.nextInt();
+                sc.nextLine(); //Consume the scanner entrance
             } while (id < 1);
 
             Product product = productService.findProductById(id);
@@ -107,7 +127,7 @@ public class InvoiceMenu {
             int quantity = 0;
             do {
                 System.out.println("Quantity:");
-                id = sc.nextInt();
+                quantity = sc.nextInt();
             } while (quantity < 1);
 
             InvoiceLine invoiceLine = new InvoiceLine(product, quantity);
@@ -117,11 +137,51 @@ public class InvoiceMenu {
             int option = sc.nextInt();
 
             if (option == 0) {
-                create = true;
+                addAnother = true;
             }
 
         }
 
         invoiceService.createInvoice(invoice);
+    }
+
+    private void getAllInvoices() {
+        ArrayList<Invoice> invoices = invoiceService.getAllInvoices();
+    
+        for (Invoice invoice: invoices) {
+            System.out.println(invoice);
+        }
+    }
+
+    private void findInvoiceById() {
+        int id;
+        do {
+            System.out.println("What id you want to search: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        Invoice invoice = invoiceService.findInvoiceById(id);
+
+        if (invoice == null) {
+            System.out.println("There's no invoice with that id");
+        } else {
+            System.out.println(invoice);
+        }
+    }
+
+    private void deleteInvoice() {
+        getAllInvoices();
+        
+        int id;
+        do {
+            System.out.println("What id you want to delete: ");
+            id = sc.nextInt();
+        } while (id < 1);
+
+        if (invoiceService.deleteInvoice(id)) {
+            System.out.println("Invoice deleted successfully.");
+        } else {
+            System.out.println("That invoice doesn't exist.");
+        }
     }
 }

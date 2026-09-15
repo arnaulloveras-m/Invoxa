@@ -41,5 +41,40 @@ public class Invoice {
         return total;
     }
 
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+
+        result.append("===== INVOICE #")
+            .append(id)
+            .append(" =====\n");
+
+        result.append("Client: ")
+            .append(client)
+            .append("\n");
+
+        result.append("Date: ")
+            .append(date)
+            .append("\n");
+
+        result.append("Products:\n");
+
+        for (InvoiceLine line : lines) {
+            result.append("  ")
+                .append(line)
+                .append("\n");
+        }
+
+        result.append("TOTAL: ")
+            .append(getTotal())
+            .append(" €");
+
+        return result.toString();
+    }
+
 
 }

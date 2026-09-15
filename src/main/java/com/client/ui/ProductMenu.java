@@ -13,7 +13,11 @@ public class ProductMenu {
 
     private Scanner sc = new Scanner(System.in);
     private int option = -1;
-    private ProductService productService = new ProductService();
+    private ProductService productService;
+
+    public ProductMenu(ProductService productService) {
+        this.productService = productService;
+    }
 
     public void productMenu() {
         System.out.println("====== PRODUCTS ======");

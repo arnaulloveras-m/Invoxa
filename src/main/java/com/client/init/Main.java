@@ -3,16 +3,28 @@ package src.main.java.com.client.init;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import src.main.java.com.client.services.ClientService;
+import src.main.java.com.client.services.InvoiceService;
+import src.main.java.com.client.services.ProductService;
 import src.main.java.com.client.ui.*;
 
 public class Main {
+
+    private static ClientService clientService = new ClientService();
+    private static ProductService productService = new ProductService();
+    private static InvoiceService invoiceService = new InvoiceService();
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int option = -1;
-        ClientMenu clientMenu = new ClientMenu();
-        ProductMenu productMenu = new ProductMenu();
+        ClientMenu clientMenu = new ClientMenu(clientService);
+        ProductMenu productMenu = new ProductMenu(productService);
+        InvoiceMenu invoiceMenu = new InvoiceMenu(
+            clientService,
+            productService,
+            invoiceService
+        );
 
         while (option != 0) {
 
@@ -42,7 +54,7 @@ public class Main {
                     break;
                     
                 case 3:
-
+                    invoiceMenu.invoiceMenu();
                     break;
 
                 case 0:

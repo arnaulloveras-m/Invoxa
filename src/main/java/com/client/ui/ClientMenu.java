@@ -11,8 +11,11 @@ public class ClientMenu {
 
     private Scanner sc = new Scanner(System.in);
     private int option = -1;
-    private ClientService clientService = new ClientService();
-    
+    private ClientService clientService;
+
+    public ClientMenu(ClientService clientService) {
+        this.clientService = clientService;
+    }    
     public void clientMenu() {
         System.out.println("====== CLIENTS ======");
         System.out.println("1.Create client");
