@@ -12,7 +12,7 @@ public class Main {
 
     private static ClientService clientService = new ClientService();
     private static ProductService productService = new ProductService();
-    private static InvoiceService invoiceService = new InvoiceService();
+    private static InvoiceService invoiceService = new InvoiceService(clientService);
 
     public static void main(String[] args) {
 

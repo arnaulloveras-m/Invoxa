@@ -13,12 +13,15 @@ public class InvoiceService {
     private InvoiceReader invoiceReader;
     private InvoiceWriter invoiceWriter;
 
-    public InvoiceService() {
-        invoicesList = new ArrayList<>();
+    public InvoiceService(ClientService clientService) {
+        invoiceReader = new InvoiceReader(clientService);
+        invoicesList = invoiceReader.readFile();
+        invoiceWriter = new InvoiceWriter();
     }
 
     public void createInvoice(Invoice invoice) {
         invoicesList.add(invoice);
+        invoiceWriter.writeFile(invoicesList);
         //saveInvoices()
     }
 
@@ -37,11 +40,16 @@ public class InvoiceService {
         return null;
     }
 
+    public void saveInvoices() {
+        invoiceWriter.writeFile(invoicesList);
+    }
+
     public boolean deleteInvoice(int id) {
         Invoice invoice = findInvoiceById(id);
 
         if (invoice != null) {
             invoicesList.remove(invoice);
+            saveInvoices();
             return true;
         } 
         

@@ -19,6 +19,21 @@ public class Invoice {
         this.lines = new ArrayList<>();
     }
 
+    public Invoice(int id, Client client, LocalDate date, ArrayList<InvoiceLine> lines) {
+        this.id = id;
+        this.client = client;
+        this.setDate(date);
+        this.lines = lines;
+
+        updateNextId(id);
+    }
+
+    public static void updateNextId(int id) {
+        if (id >= nextId) {
+            nextId = id + 1;
+        }
+    }
+
     public void setDate(LocalDate date) {
         if (date == null) {
             throw new IllegalArgumentException("Invoice date cannot be null");
@@ -43,6 +58,18 @@ public class Invoice {
 
     public int getId() {
         return this.id;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public ArrayList<InvoiceLine> getLines() {
+        return new ArrayList<>(lines);
     }
 
     @Override
