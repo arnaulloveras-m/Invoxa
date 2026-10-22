@@ -6,7 +6,7 @@
 
 Proyecto personal para aprender construyendo: desde Java puro hasta una futura aplicación full-stack.
 
-![Java](https://img.shields.io/badge/Java-Core-orange?logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/Java-25%20LTS-orange?logo=openjdk&logoColor=white)
 ![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-blue)
 ![Versión](https://img.shields.io/badge/Versión-Java%20Core-success)
 
@@ -33,7 +33,7 @@ Durante el desarrollo, utilizo la inteligencia artificial como apoyo para resolv
 
 ## Tecnologías y conceptos
 
-- **Java**
+- **Java 25 (LTS)**
 - Programación orientada a objetos.
 - Colecciones, como `ArrayList`.
 - Lectura y escritura de archivos para la persistencia de datos.
@@ -84,7 +84,7 @@ Después podrás crear nuevos clientes, productos y facturas desde el menú. Los
 
 1. Clona el repositorio.
 2. Abre el proyecto en tu IDE de Java.
-3. Comprueba que tienes instalada la versión de Java requerida por el proyecto.
+3. Comprueba que tienes instalada la Java 25 (LTS), si coincide con el SDK y el nivel de lenguaje configurados en el proyecto.
 4. Ejecuta el método `main()` de la clase principal:
 
    `src/main/java/com/invoxa/init/Main.java`
