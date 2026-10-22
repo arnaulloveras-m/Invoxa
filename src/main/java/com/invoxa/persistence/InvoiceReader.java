@@ -1,4 +1,4 @@
-package src.main.java.com.client.persistence;
+package src.main.java.com.invoxa.persistence;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import src.main.java.com.client.model.Invoice;
-import src.main.java.com.client.model.InvoiceLine;
-import src.main.java.com.client.services.ClientService;
-import src.main.java.com.client.model.Client;
+import src.main.java.com.invoxa.model.Invoice;
+import src.main.java.com.invoxa.model.InvoiceLine;
+import src.main.java.com.invoxa.services.ClientService;
+import src.main.java.com.invoxa.model.Client;
 
 public class InvoiceReader {
     

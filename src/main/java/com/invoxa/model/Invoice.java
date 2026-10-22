@@ -1,4 +1,4 @@
-package src.main.java.com.client.model;
+package src.main.java.com.invoxa.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;

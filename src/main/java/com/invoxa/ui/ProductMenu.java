@@ -1,13 +1,12 @@
-package src.main.java.com.client.ui;
+package src.main.java.com.invoxa.ui;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import src.main.java.com.client.model.Client;
-import src.main.java.com.client.model.Product;
-import src.main.java.com.client.services.ProductService;
+import src.main.java.com.invoxa.model.Product;
+import src.main.java.com.invoxa.services.ProductService;
 
 public class ProductMenu {
 

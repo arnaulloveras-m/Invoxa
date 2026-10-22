@@ -1,11 +1,11 @@
-package src.main.java.com.client.persistence;
+package src.main.java.com.invoxa.persistence;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import src.main.java.com.client.model.Product;
+import src.main.java.com.invoxa.model.Product;
 
 public class ProductWriter {
 

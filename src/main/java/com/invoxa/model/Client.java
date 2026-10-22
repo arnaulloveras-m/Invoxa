@@ -1,4 +1,4 @@
-package src.main.java.com.client.model;
+package src.main.java.com.invoxa.model;
 
 import java.time.LocalDate;
 
@@ -22,6 +22,22 @@ public class Client {
         this.setPhone(phone);
         this.setAddress(address);
         this.createdAt = LocalDate.now();
+    }
+
+    public Client(int id, String name, String nif, String email, String phone, String address) {
+        this.id = id;
+        this.setName(name);
+        this.setNif(nif);
+        this.setEmail(email);
+        this.setPhone(phone);
+        this.setAddress(address);
+        this.createdAt = LocalDate.now();
+    }
+
+    public static void updateNextId(int id) {
+        if (id >= nextId) {
+            nextId = id + 1;
+        }
     }
 
     @Override

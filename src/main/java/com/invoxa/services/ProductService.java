@@ -1,11 +1,10 @@
-package src.main.java.com.client.services;
+package src.main.java.com.invoxa.services;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import src.main.java.com.client.model.Client;
-import src.main.java.com.client.model.Product;
-import src.main.java.com.client.persistence.*;
+import src.main.java.com.invoxa.model.Product;
+import src.main.java.com.invoxa.persistence.*;
 
 public class ProductService {
 

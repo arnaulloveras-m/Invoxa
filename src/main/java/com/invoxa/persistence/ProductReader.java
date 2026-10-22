@@ -1,11 +1,11 @@
-package src.main.java.com.client.persistence;
+package src.main.java.com.invoxa.persistence;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.math.BigDecimal;
-import src.main.java.com.client.model.Product;
+import src.main.java.com.invoxa.model.Product;
 
 public class ProductReader {
 

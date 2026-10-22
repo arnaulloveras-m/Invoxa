@@ -1,11 +1,11 @@
-package src.main.java.com.client.ui;
+package src.main.java.com.invoxa.ui;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import src.main.java.com.client.model.Client;
-import src.main.java.com.client.services.ClientService;
+import src.main.java.com.invoxa.model.Client;
+import src.main.java.com.invoxa.services.ClientService;
 
 public class ClientMenu {
 
@@ -161,6 +161,7 @@ public class ClientMenu {
                 System.out.println("New name: " );
                 String newName = sc.nextLine();
                 client.setName(newName);
+                clientService.saveClients();
                 break;
 
             case 2:
@@ -168,6 +169,7 @@ public class ClientMenu {
                 System.out.println("New NIF: " );
                 String newNIF = sc.nextLine();
                 client.setNif(newNIF);
+                clientService.saveClients();
                 break;
 
             case 3:
@@ -175,6 +177,7 @@ public class ClientMenu {
                 System.out.println("New email: " );
                 String newEmail = sc.nextLine();
                 client.setEmail(newEmail);
+                clientService.saveClients();
                 break;
 
             case 4:
@@ -182,6 +185,7 @@ public class ClientMenu {
                 System.out.println("New phone: " );
                 String newPhone = sc.nextLine();
                 client.setPhone(newPhone);
+                clientService.saveClients();
                 break; 
 
             case 5:
@@ -189,6 +193,7 @@ public class ClientMenu {
                 System.out.println("New address: " );
                 String newAddress = sc.nextLine();
                 client.setAddress(newAddress);
+                clientService.saveClients();
                 break;         
         
             default:

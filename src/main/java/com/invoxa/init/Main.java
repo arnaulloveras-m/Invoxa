@@ -1,12 +1,12 @@
-package src.main.java.com.client.init;
+package src.main.java.com.invoxa.init;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import src.main.java.com.client.services.ClientService;
-import src.main.java.com.client.services.InvoiceService;
-import src.main.java.com.client.services.ProductService;
-import src.main.java.com.client.ui.*;
+import src.main.java.com.invoxa.services.ClientService;
+import src.main.java.com.invoxa.services.InvoiceService;
+import src.main.java.com.invoxa.services.ProductService;
+import src.main.java.com.invoxa.ui.*;
 
 public class Main {
 

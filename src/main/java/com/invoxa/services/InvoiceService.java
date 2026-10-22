@@ -1,11 +1,10 @@
-package src.main.java.com.client.services;
+package src.main.java.com.invoxa.services;
 
 import java.util.ArrayList;
 
-import src.main.java.com.client.model.Client;
-import src.main.java.com.client.model.Invoice;
-import src.main.java.com.client.persistence.InvoiceReader;
-import src.main.java.com.client.persistence.InvoiceWriter;
+import src.main.java.com.invoxa.model.Invoice;
+import src.main.java.com.invoxa.persistence.InvoiceReader;
+import src.main.java.com.invoxa.persistence.InvoiceWriter;
 
 public class InvoiceService {
 

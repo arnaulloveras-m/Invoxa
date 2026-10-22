@@ -1,4 +1,4 @@
-package src.main.java.com.client.ui;
+package src.main.java.com.invoxa.ui;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import src.main.java.com.client.model.Client;
-import src.main.java.com.client.model.Invoice;
-import src.main.java.com.client.model.InvoiceLine;
-import src.main.java.com.client.model.Product;
-import src.main.java.com.client.services.ClientService;
-import src.main.java.com.client.services.InvoiceService;
-import src.main.java.com.client.services.ProductService;
+import src.main.java.com.invoxa.model.Client;
+import src.main.java.com.invoxa.model.Invoice;
+import src.main.java.com.invoxa.model.InvoiceLine;
+import src.main.java.com.invoxa.model.Product;
+import src.main.java.com.invoxa.services.ClientService;
+import src.main.java.com.invoxa.services.InvoiceService;
+import src.main.java.com.invoxa.services.ProductService;
 
 public class InvoiceMenu {
 

@@ -1,12 +1,12 @@
-package src.main.java.com.client.persistence;
+package src.main.java.com.invoxa.persistence;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import src.main.java.com.client.model.Invoice;
-import src.main.java.com.client.model.InvoiceLine;
+import src.main.java.com.invoxa.model.Invoice;
+import src.main.java.com.invoxa.model.InvoiceLine;
 
 public class InvoiceWriter {
     
