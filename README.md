@@ -6,9 +6,9 @@
 
 Proyecto personal para aprender construyendo: desde Java puro hasta una futura aplicación full-stack.
 
-![Java](https://img.shields.io/badge/Java-25%20LTS-orange?logo=openjdk&logoColor=white)
-![Estado](https://img.shields.io/badge/Estado-En%20desarrollo-blue)
-![Versión](https://img.shields.io/badge/Versión-Java%20Core-success)
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)
+![Estado](https://img.shields.io/badge/Java%20Core-Finalizado-success)
+![Versión](https://img.shields.io/badge/Versión-Java%20Core-blue)
 
 </div>
 
@@ -16,7 +16,7 @@ Proyecto personal para aprender construyendo: desde Java puro hasta una futura a
 
 ## Sobre el proyecto
 
-**Invoxa** es una aplicación de gestión y facturación que estoy desarrollando por fases. La primera versión utiliza Java puro y una interfaz de consola, con el objetivo de reforzar los fundamentos del lenguaje mediante un proyecto práctico.
+**Invoxa** es una aplicación de gestión y facturación que estoy desarrollando por fases. La versión Java Core utiliza Java y una interfaz de consola, con el objetivo de reforzar los fundamentos del lenguaje mediante un proyecto práctico.
 
 La idea también nace de mi experiencia trabajando en una gestoría, que me permite conocer algunos procesos administrativos y pensar qué funcionalidades puede necesitar una aplicación de este tipo.
 
@@ -33,7 +33,7 @@ Durante el desarrollo, utilizo la inteligencia artificial como apoyo para resolv
 
 ## Tecnologías y conceptos
 
-- **Java 25 (LTS)**
+- **Java 21 (LTS)**
 - Programación orientada a objetos.
 - Colecciones, como `ArrayList`.
 - Lectura y escritura de archivos para la persistencia de datos.
@@ -82,22 +82,22 @@ Después podrás crear nuevos clientes, productos y facturas desde el menú. Los
 
 ## Ejecución
 
-1. Clona el repositorio.
-2. Abre el proyecto en tu IDE de Java.
-3. Comprueba que tienes instalada la Java 25 (LTS), si coincide con el SDK y el nivel de lenguaje configurados en el proyecto.
+1. Instala **JDK 21**.
+2. Clona el repositorio.
+3. Abre el proyecto en tu IDE de Java.
 4. Ejecuta el método `main()` de la clase principal:
 
    `src/main/java/com/invoxa/init/Main.java`
 
 ## Roadmap
 
-Invoxa se desarrolla por etapas para poder aprender y validar cada parte antes de avanzar a la siguiente.
+La versión **Java Core está finalizada**. Las siguientes etapas están planificadas y se desarrollarán por separado.
 
-| Versión | Rama de Git | Objetivo |
-|---|---|---|
-| **Java Core** | `version/java` | Aplicación de consola, lógica de negocio y persistencia mediante archivos. |
-| **Spring Boot** | `version/spring` | Evolucionar el proyecto hacia un backend y una API REST. |
-| **Full Stack** | `version/angular` | Incorporar Angular y conectar el frontend con Spring Boot. |
+| Versión | Rama de Git | Estado | Objetivo |
+|---|---|---|---|
+| **Java Core** | `version/java` | Finalizado | Aplicación de consola, lógica de negocio y persistencia mediante archivos. |
+| **Spring Boot** | `version/spring` | Planificado | Evolucionar el proyecto hacia un backend y una API REST. |
+| **Full Stack** | `version/angular` | Planificado | Incorporar Angular y conectar el frontend con Spring Boot. |
 
 Cada rama permite trabajar en una etapa del proyecto sin modificar las versiones anteriores. La idea es conservar las versiones de aprendizaje por separado y, cuando la aplicación full-stack esté terminada e integrada, dejar en `main` la versión completa.
 
