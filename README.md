@@ -2,7 +2,7 @@
 
 # INVOXA
 
-### Aplicación de gestión y facturación desarrollada en Java
+**Aplicación de gestión y facturación desarrollada en Java**
 
 Proyecto personal para aprender construyendo: desde Java puro hasta una futura aplicación full-stack.
 
@@ -21,12 +21,6 @@ Proyecto personal para aprender construyendo: desde Java puro hasta una futura a
 La idea también nace de mi experiencia trabajando en una gestoría, que me permite conocer algunos procesos administrativos y pensar qué funcionalidades puede necesitar una aplicación de este tipo.
 
 Durante el desarrollo, utilizo la inteligencia artificial como apoyo para resolver dudas, profundizar en conceptos y revisar posibles mejoras. El código lo escribo yo: quiero comprender qué hace cada parte y las decisiones técnicas que tomo.
-
-## Vista previa
-
-La versión actual funciona desde la consola e incluye un menú para acceder a la gestión de clientes, productos y facturas.
-
-![Menú principal de Invoxa](docs/invoxa-console.png)
 
 ## Funcionalidades actuales
 
